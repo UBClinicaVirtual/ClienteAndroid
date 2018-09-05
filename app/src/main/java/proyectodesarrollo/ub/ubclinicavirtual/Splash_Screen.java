@@ -14,17 +14,21 @@ import android.support.v7.app.AppCompatActivity;
 
         @Override
         public void onCreate (Bundle savedInstanceState){
+
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_splash__screen);
+
+
 
             new Handler().postDelayed(new Runnable(){
                 public void run(){
                     // pass 3 sec, go to log in activity.
-                    Intent intent = new Intent(Splash_Screen.this, MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                     finish();
                 };
             }, Duration_Splash);
+
         }
     }
 
