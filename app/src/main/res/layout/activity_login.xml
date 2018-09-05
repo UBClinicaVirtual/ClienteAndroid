@@ -31,14 +31,14 @@
         android:layout_marginBottom="16dp"
         android:layout_marginRight="0dp"
         android:layout_marginTop="20dp"
-        app:srcCompat="@drawable/hospital_logo_sin_fondo" />
+        app:srcCompat="@drawable/log3" />
 
     <Button
         android:id="@+id/email_sign_in_button"
         style="?android:textAppearanceSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="  "
+        android:layout_marginRight="0dp"
         android:layout_marginTop="150dp"
         android:text="@string/action_sign_in"
         android:textStyle="bold" />
