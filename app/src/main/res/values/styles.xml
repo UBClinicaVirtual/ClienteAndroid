@@ -8,6 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
      <style name="HiddenTittleTheme" parent="AppTheme">
+         <item name="android:windowNoTitle">true</item>
+         <item name="android:windowFullscreen">true</item>
          <item name="windowNoTitle">true</item>
          <item name="windowActionBar">false</item>
      </style>
