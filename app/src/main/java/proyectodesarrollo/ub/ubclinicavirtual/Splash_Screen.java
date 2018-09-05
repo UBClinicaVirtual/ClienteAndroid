@@ -3,20 +3,18 @@ package proyectodesarrollo.ub.ubclinicavirtual;
 import android.os.Bundle;
 import android.os.Handler;
 import android.content.Intent;
-import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 
 //public class Splash_Screen extends AppCompatActivity {
-    public class Splash_Screen extends Activity{
+    public class Splash_Screen extends AppCompatActivity{
 
 
-        //Duration Splash
+    //Duration Splash
         private final int Duration_Splash = 3000;  // 3 seconds
 
         @Override
         public void onCreate (Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
-
-
             setContentView(R.layout.activity_splash__screen);
 
             new Handler().postDelayed(new Runnable(){
