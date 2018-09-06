@@ -1,0 +1,42 @@
+Proyect name : proyectodesarrollo.ub.ubclinicavirtual
+
+09:22:48: Executing task 'signingReport'...
+
+Executing tasks: [signingReport]
+
+Configuration on demand is an incubating feature.
+:app:signingReport
+Variant: releaseUnitTest
+Config: none
+----------
+Variant: debugAndroidTest
+Config: debug
+Store: C:\Users\fromero\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: CA:D8:D4:8D:8A:73:75:6F:32:7A:46:39:69:D6:AF:4E
+SHA1: 65:1F:AD:DE:9B:5A:18:71:4D:CF:AF:3E:DE:ED:E1:1E:0D:5D:FE:25
+Valid until: jueves 28 de noviembre de 2047
+----------
+Variant: release
+Config: none
+----------
+Variant: debugUnitTest
+Config: debug
+Store: C:\Users\fromero\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: CA:D8:D4:8D:8A:73:75:6F:32:7A:46:39:69:D6:AF:4E
+SHA1: 65:1F:AD:DE:9B:5A:18:71:4D:CF:AF:3E:DE:ED:E1:1E:0D:5D:FE:25
+Valid until: jueves 28 de noviembre de 2047
+----------
+Variant: debug
+Config: debug
+Store: C:\Users\fromero\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: CA:D8:D4:8D:8A:73:75:6F:32:7A:46:39:69:D6:AF:4E
+SHA1: 65:1F:AD:DE:9B:5A:18:71:4D:CF:AF:3E:DE:ED:E1:1E:0D:5D:FE:25
+Valid until: jueves 28 de noviembre de 2047
+----------
+
+BUILD SUCCESSFUL in 1m 5s
+1 actionable task: 1 executed
+09:24:05: Task execution finished 'signingReport'.
