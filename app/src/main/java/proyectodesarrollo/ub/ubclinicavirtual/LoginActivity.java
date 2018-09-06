@@ -30,7 +30,7 @@ import android.widget.TextView;
  */
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-
+    
     private GoogleSignInClient mGoogleSignInClient;
     private TextView mStatusTextView;
 
@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         // Configure sign-in to request the user's ID, email address, and basic
 // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -75,12 +75,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             //mStatusTextView.setText(getString(R.string.action_sign_in_short))
 
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);
-            findViewById(R.id.sign_out_and_disconnect).setVisibility(View.VISIBLE);
+            //findViewById(R.id.sign_out_and_disconnect).setVisibility(View.VISIBLE);
         } else {
-            mStatusTextView.setText(R.string.signed_out);
+            //mStatusTextView.setText(R.string.signed_out);
 
             findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
-            findViewById(R.id.sign_out_and_disconnect).setVisibility(View.GONE);
+            //findViewById(R.id.sign_out_and_disconnect).setVisibility(View.GONE);
         }
     }
 
@@ -128,4 +128,5 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 }
+
 
