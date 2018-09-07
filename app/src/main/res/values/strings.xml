@@ -7,6 +7,9 @@
 
     <string name="signed_in_fmt">Registrado como: %s</string>
 
+    <!-- Sign-in id server -->
+    <string name="server_client_id">f?????</string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
