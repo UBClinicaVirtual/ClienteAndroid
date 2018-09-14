@@ -23,7 +23,7 @@ import android.support.v7.app.AppCompatActivity;
             new Handler().postDelayed(new Runnable(){
                 public void run(){
                     // pass 3 sec, go to log in activity.
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intent);
                     finish();
                 };
