@@ -27,5 +27,9 @@ public class ServerConnectorReal implements IServerConnector {
         return Integer.parseInt( triset.first() );
     }
 
+    @Override
+    public String getMensaje() {
+        return "Conexion Real";
+    }
 
 }

@@ -1,5 +1,7 @@
 package proyectodesarrollo.ub.ubclinicavirtual.proyectodesarrollo.ub.ubclinicavirtual.serverconnection;
 
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 public class ServerConnectorLocal implements IServerConnector {
@@ -20,7 +22,6 @@ public class ServerConnectorLocal implements IServerConnector {
 
     @Override
     public int login(String url, String user, String password) {
-        System.out.println("Conexion local forzada");
         return 1;
     }
 
@@ -30,4 +31,8 @@ public class ServerConnectorLocal implements IServerConnector {
         return listaL.get(3);
     }
 
+    @Override
+    public String getMensaje() {
+        return "Conexion Local";
+    }
 }

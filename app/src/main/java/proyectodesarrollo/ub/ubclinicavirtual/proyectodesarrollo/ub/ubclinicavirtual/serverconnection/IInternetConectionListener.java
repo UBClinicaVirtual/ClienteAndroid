@@ -2,7 +2,6 @@ package proyectodesarrollo.ub.ubclinicavirtual.proyectodesarrollo.ub.ubclinicavi
 
 public interface IInternetConectionListener {
 
-    public void noHayInternet();
-    public void hayInternet();
+    public boolean InternetConnectivity();
 
 }

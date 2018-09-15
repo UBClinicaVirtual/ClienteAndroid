@@ -13,27 +13,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Toast.makeText(this, "HOLA", Toast.LENGTH_SHORT).show();
-
-        //testConection();
     }
 
     @Override
     public void onStart(){
         super.onStart();
 
-        Toast.makeText(this, "HOLA", Toast.LENGTH_SHORT).show();
+        testConection();
+
     }
 
     //Pruebas para la conexion al server mock
-   /* public void testConection(){
+    public void testConection(){
 
-        IServerConnector conexion = ServerConection();
-
+        //CONEXIÓN LOCAL
+        IServerConnector conexion = ServerConection.createLocalConnection(this);
         conexion.login(null, null, null);
+        Toast.makeText(this, conexion.getMensaje(), Toast.LENGTH_SHORT ).show();
 
-        //mostrar mensaje en el cel que pudo conectarse
 
-    }*/
+
+    }
 }

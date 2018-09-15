@@ -3,15 +3,10 @@ package proyectodesarrollo.ub.ubclinicavirtual.proyectodesarrollo.ub.ubclinicavi
 public class InternetConextionListener implements IInternetConectionListener {
 
     @Override
-    public void noHayInternet() {
-        System.out.println("NO HAY INTERNET");
+    public boolean InternetConnectivity() {
 
+        //DESARROLLAR METODO PARA VERIFICAR SI HAY O NO INTERNET . DEVOLVER TRUE O FALSE;
+
+        return false;
     }
-
-    @Override
-    public void hayInternet() {
-        System.out.println("HAY INTERNET");
-
-    }
-
 }

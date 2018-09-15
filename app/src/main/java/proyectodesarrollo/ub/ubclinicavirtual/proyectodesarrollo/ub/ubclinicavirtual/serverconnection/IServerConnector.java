@@ -6,4 +6,6 @@ public interface IServerConnector {
 
     public Integer getValor();
 
+    public String getMensaje();
+
 }

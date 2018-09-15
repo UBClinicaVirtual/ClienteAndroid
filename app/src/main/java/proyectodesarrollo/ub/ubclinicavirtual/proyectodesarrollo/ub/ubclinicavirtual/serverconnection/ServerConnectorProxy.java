@@ -1,9 +1,17 @@
 package proyectodesarrollo.ub.ubclinicavirtual.proyectodesarrollo.ub.ubclinicavirtual.serverconnection;
 
+import android.content.Context;
+import android.widget.Toast;
+
 public class ServerConnectorProxy implements IServerConnector {
 
     private IServerConnector connector;
     private IInternetConectionListener internetListener;
+    private Context mContext;
+
+    public ServerConnectorProxy(Context mContext) {
+        setmContext(mContext);
+    }
 
 
     public void addInternetListener(IInternetConectionListener l) {
@@ -15,12 +23,15 @@ public class ServerConnectorProxy implements IServerConnector {
         return getConnector().login(url, user, password);
     }
 
-    private void checkInternet() {
+    public void checkInternet() {
 
-        if(false)
-            internetListener.noHayInternet();
-        else
-            internetListener.hayInternet();
+        //Si hay internet que me notifique
+        if(internetListener.InternetConnectivity()){
+            Toast.makeText(getmContext(), "Hay internet", Toast.LENGTH_SHORT ).show();
+        }else{
+            Toast.makeText(getmContext(), "No Hay internet" , Toast.LENGTH_SHORT ).show();
+        }
+
     }
 
     public IServerConnector getConnector() {
@@ -33,8 +44,19 @@ public class ServerConnectorProxy implements IServerConnector {
 
     @Override
     public Integer getValor() {
-        this.checkInternet();
         return getConnector().getValor();
     }
 
+    @Override
+    public String getMensaje() {
+        return getConnector().getMensaje();
+    }
+
+    public void setmContext(Context mContext) {
+        this.mContext = mContext;
+    }
+
+    private Context getmContext(){
+        return mContext;
+    }
 }
