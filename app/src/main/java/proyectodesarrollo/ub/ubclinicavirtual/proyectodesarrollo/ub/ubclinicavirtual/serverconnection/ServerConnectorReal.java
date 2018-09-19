@@ -17,19 +17,20 @@ public class ServerConnectorReal implements IServerConnector {
     }
 
     @Override
+    public int signIn(String url, String user, String password) {
+        return 0;
+    }
+
+    @Override
     public int login(String url, String user, String password) {
         System.out.println("Conexion por la web");
         return 0;
     }
 
     @Override
-    public Integer getValor() {
-        return Integer.parseInt( triset.first() );
+    public int logOut() {
+        return 0;
     }
 
-    @Override
-    public String getMensaje() {
-        return "Conexion Real";
-    }
 
 }

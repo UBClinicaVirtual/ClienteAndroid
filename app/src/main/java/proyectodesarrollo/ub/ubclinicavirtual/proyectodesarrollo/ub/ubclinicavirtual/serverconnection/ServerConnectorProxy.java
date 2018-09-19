@@ -5,8 +5,8 @@ import android.widget.Toast;
 
 public class ServerConnectorProxy implements IServerConnector {
 
-    private IServerConnector connector;
-    private IInternetConectionListener internetListener;
+    private IServerConnector mConnector;
+    private IInternetConectionListener mInternetListener;
     private Context mContext;
 
     public ServerConnectorProxy(Context mContext) {
@@ -15,18 +15,29 @@ public class ServerConnectorProxy implements IServerConnector {
 
 
     public void addInternetListener(IInternetConectionListener l) {
-        internetListener = l;
+        mInternetListener = l;
     }
+
+    @Override
+    public int signIn(String url, String user, String password) {
+        return getmConnector().signIn(url,user,password);
+    }
+
     @Override
     public int login(String url, String user, String password) {
         checkInternet();
-        return getConnector().login(url, user, password);
+        return getmConnector().login(url, user, password);
+    }
+
+    @Override
+    public int logOut() {
+        return getmConnector().logOut();
     }
 
     public void checkInternet() {
 
-        //Si hay internet que me notifique
-        if(internetListener.InternetConnectivity()){
+        //NOTIFICA SI HAY O NO INTERNET
+        if(mInternetListener.InternetConnectivity()){
             Toast.makeText(getmContext(), "Hay internet", Toast.LENGTH_SHORT ).show();
         }else{
             Toast.makeText(getmContext(), "No Hay internet" , Toast.LENGTH_SHORT ).show();
@@ -34,23 +45,14 @@ public class ServerConnectorProxy implements IServerConnector {
 
     }
 
-    public IServerConnector getConnector() {
-        return connector;
+    public IServerConnector getmConnector() {
+        return mConnector;
     }
 
-    public void setConnector(IServerConnector connector) {
-        this.connector = connector;
+    public void setmConnector(IServerConnector mConnector) {
+        this.mConnector = mConnector;
     }
 
-    @Override
-    public Integer getValor() {
-        return getConnector().getValor();
-    }
-
-    @Override
-    public String getMensaje() {
-        return getConnector().getMensaje();
-    }
 
     public void setmContext(Context mContext) {
         this.mContext = mContext;

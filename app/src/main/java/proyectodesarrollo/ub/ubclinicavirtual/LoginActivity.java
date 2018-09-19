@@ -50,6 +50,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         // Configure sign-in to request the user's ID, email address, and basic
 // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                //PIDO EL TOKEN PARA ENVIAR AL SERVIDOR
+                //.requestIdToken(getString(R.string.server_client_id))
                 .requestEmail()
                 .build();
 
@@ -126,12 +128,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
+            //OBTENEMOS EL TOKEN ID DE LA CUENTA PARA SER ENVIADA AL SERVIDOR
+            // String idToken =  account.getIdToken();
+
+
             // Signed in successfully, show authenticated UI.
             updateUI(account);
-            //poner el main
 
-            //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            //startActivity(intent);
 
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.

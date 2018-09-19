@@ -3,7 +3,6 @@ package proyectodesarrollo.ub.ubclinicavirtual;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import proyectodesarrollo.ub.ubclinicavirtual.proyectodesarrollo.ub.ubclinicavirtual.serverconnection.*;
 
@@ -19,19 +18,16 @@ public class MainActivity extends AppCompatActivity {
     public void onStart(){
         super.onStart();
 
+        //METODO PARA PROBAR LA CONEXION AUNQUE SEA LOCAL
         testConection();
 
     }
 
-    //Pruebas para la conexion al server mock
+    //PRUEBAS PARA CONEXION MOCK
     public void testConection(){
 
-        //CONEXIÓN LOCAL
-        IServerConnector conexion = ServerConection.createLocalConnection(this);
-        conexion.login(null, null, null);
-        Toast.makeText(this, conexion.getMensaje(), Toast.LENGTH_SHORT ).show();
-
-
-
+        //CREAMOS UNA CONEXIÓN LOCAL AL SERVIDOR MOCK
+        IServerConnector mConnection = ServerConnection.createLocalConnection(this);
+        mConnection.login(null, null, null);
     }
 }

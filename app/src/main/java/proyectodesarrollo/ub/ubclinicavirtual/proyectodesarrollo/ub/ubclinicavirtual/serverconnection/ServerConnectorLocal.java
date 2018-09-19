@@ -21,18 +21,18 @@ public class ServerConnectorLocal implements IServerConnector {
     }
 
     @Override
+    public int signIn(String url, String user, String password) {
+        return 0;
+    }
+
+    @Override
     public int login(String url, String user, String password) {
         return 1;
     }
 
     @Override
-    public Integer getValor() {
-
-        return listaL.get(3);
+    public int logOut() {
+        return 0;
     }
 
-    @Override
-    public String getMensaje() {
-        return "Conexion Local";
-    }
 }

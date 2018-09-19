@@ -2,10 +2,15 @@ package proyectodesarrollo.ub.ubclinicavirtual.proyectodesarrollo.ub.ubclinicavi
 
 public interface IServerConnector {
 
-    public int login(String url, String user, String password);
+    //REGISTRARSE
+    public int signIn  (String url, String user, String password);
 
-    public Integer getValor();
+    //INICIAR SESION
+    public int login   (String url, String user, String password);
 
-    public String getMensaje();
+    //CERRAR SESION
+    public int logOut  ();
+
+
 
 }
