@@ -31,7 +31,7 @@ public class GestionarJSON {
 
         try{
 
-            url = new URL(urlString.toString()); // ACA SE ROMPE EL CODIGO 
+            url = new URL(urlString.toString()); // ACA SE ROMPE EL CODIGO
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
             con.setRequestProperty("User-Agent",USER_AGENT);
@@ -39,11 +39,14 @@ public class GestionarJSON {
             con.getResponseCode();
             BufferedReader in = new BufferedReader( new InputStreamReader( con.getInputStream() ));
             String inputLine;
+
             response = new StringBuffer();
             while((inputLine = in.readLine())!= null){
+
                 response.append(inputLine);
 
             }
+
             return response.toString();
         } catch (MalformedURLException e) {
             //e.printStackTrace();

@@ -7,10 +7,8 @@ public class ServerConnectorProxy implements IServerConnector {
 
     private IServerConnector mConnector;
     private IInternetConectionListener mInternetListener;
-    private Context mContext;
 
-    public ServerConnectorProxy(Context mContext) {
-        setmContext(mContext);
+    public ServerConnectorProxy() {
     }
 
 
@@ -20,13 +18,23 @@ public class ServerConnectorProxy implements IServerConnector {
 
     @Override
     public int signIn(String url, String user, String password) {
-        return getmConnector().signIn(url,user,password);
+        return getmConnector().signIn(url,user);
     }
 
     @Override
     public int login(String url, String user, String password) {
         checkInternet();
-        return getmConnector().login(url, user, password);
+        return getmConnector().login(url, user);
+    }
+
+    @Override
+    public int signIn(String user, String password) {
+        return 0;
+    }
+
+    @Override
+    public int login(String user, String password) {
+        return 0;
     }
 
     @Override
@@ -34,13 +42,73 @@ public class ServerConnectorProxy implements IServerConnector {
         return getmConnector().logOut();
     }
 
-    public void checkInternet() {
+    @Override
+    public int getUserInformation(String idUser) {
+        return 0;
+    }
+
+    @Override
+    public int deactivateUserAccount(String idUser) {
+        return 0;
+    }
+
+    @Override
+    public int addClinicProfileToUserAccount(String idUser, String idClinic) {
+        return 0;
+    }
+
+    @Override
+    public int searchClinicByName(String clinicName) {
+        return 0;
+    }
+
+    @Override
+    public int addHCPProfileToUserAccount(String idUser, String idHCP) {
+        return 0;
+    }
+
+    @Override
+    public int searchHCP(String idHCP) {
+        return 0;
+    }
+
+    @Override
+    public int addPatientProfileToUserAccount(String idUser, String idPatient) {
+        return 0;
+    }
+
+    @Override
+    public int searchPatient(String idPatient) {
+        return 0;
+    }
+
+    @Override
+    public int createNewSpeciality(String specialityInfo) {
+        return 0;
+    }
+
+    @Override
+    public int getSpecialityById(String idSpeciality) {
+        return 0;
+    }
+
+    @Override
+    public int updateSpecialityById(String specialityInfo) {
+        return 0;
+    }
+
+    @Override
+    public int searchSpeciality(String specialityInfo) {
+        return 0;
+    }
+
+    public String checkInternet() {
 
         //NOTIFICA SI HAY O NO INTERNET
         if(mInternetListener.InternetConnectivity()){
-            Toast.makeText(getmContext(), "Hay internet", Toast.LENGTH_SHORT ).show();
+            return "Hay Internet";
         }else{
-            Toast.makeText(getmContext(), "No Hay internet" , Toast.LENGTH_SHORT ).show();
+            return "No hay internet";
         }
 
     }
@@ -54,11 +122,4 @@ public class ServerConnectorProxy implements IServerConnector {
     }
 
 
-    public void setmContext(Context mContext) {
-        this.mContext = mContext;
-    }
-
-    private Context getmContext(){
-        return mContext;
-    }
 }
